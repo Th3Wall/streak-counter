@@ -1,7 +1,7 @@
 {
   "name": "@th3wall/streak-counter",
   "description": "A basic streak counter inspired by Duolingo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Davide Mandelli | Th3Wall <mandellidavide.95@gmail.com>",
   "repository": {
     "type": "git",
