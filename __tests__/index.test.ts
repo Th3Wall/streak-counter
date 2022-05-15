@@ -66,6 +66,24 @@ describe("streakCounter", () => {
             // Should match the dates used to set up the tests
             expect(streak.startDate).toBe('12/12/2021')
         })
+
+        it("should increment the streak count", () => {
+            // it should increment because this is the day after the
+            // streak started and a streak is days in a row
+            const date = new Date('12/13/2021')
+            const streak = streakCounter(mockLocalStorage, date)
+
+            expect(streak.currentCount).toBe(2)
+        })
+
+        it("should not increment when the login days are not consecutive", () => {
+            // It should not increment because this is two days after
+            // the streak started and the days aren't consecutive.
+            const date = new Date('12/14/2021')
+            const streak = streakCounter(mockLocalStorage, date)
+
+            expect(streak.currentCount).toBe(1)
+        })
     })
 
     afterEach(() => {
